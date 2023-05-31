@@ -1,4 +1,5 @@
 require('express-async-errors');
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const winston = require('winston');
@@ -29,4 +30,5 @@ require('./startup/db')();
 
 app.listen(port, () => {
   console.log('listening on port ' + port);
+  console.log(process.env.NODE_ENV);
 });
