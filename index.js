@@ -16,6 +16,8 @@ app.use(credentials);
 
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //middleware for cookies
